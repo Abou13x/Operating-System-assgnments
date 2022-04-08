@@ -20,7 +20,7 @@ void* producer(struct SharedMData *sharedMData) {
 int main()
 {
     int sharedM_fd = shm_open(NAME, O_CREAT | O_RDWR, 0666); 
-    ftruncate(fd, SIZE); 
+    ftruncate(SharedMData, SIZE); 
     struct SharedMData *sharedMData = mmap(0, sizeof(*sharedMData), PROT_WRITE, MAP_SHARED, sharedM_fd, 0); 
 
     sharedMData->n    = 0;
